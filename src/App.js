@@ -6,6 +6,7 @@ import Table from './Table';
 import './App.css';
 import { sortData } from "./utilitis";
 import LineGraph from "./LineGraph";
+import "leaflet/dist/leaflet.css";
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
   const [country, setCountry] = useState(['worldwide']);
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
+  const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
+  const [mapZoom, setMapZoom] = useState(3 );
 
   useEffect(() =>{
     fetch("https://disease.sh/v3/covid-19/all")
@@ -57,6 +60,9 @@ function App() {
     .then (data =>{
       setCountry(countryCode);
       setCountryInfo(data);
+
+      setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+      setMapZoom(4);
     })
   };
   
@@ -79,24 +85,29 @@ function App() {
 
         <div className="app__stats">
           <InfoBox 
-          title="Coronavirus Cases" 
-          cases={countryInfo.todayCases} 
-          total={countryInfo.cases}/>
+            title="Coronavirus Cases" 
+            cases={countryInfo.todayCases} 
+            total={countryInfo.cases}
+          />
           
           <InfoBox 
-          title="Recovered" 
-          cases={countryInfo.todayRecovered} 
-          total={countryInfo.recovered}/>
+            title="Recovered" 
+            cases={countryInfo.todayRecovered} 
+            total={countryInfo.recovered}
+          />
           
           <InfoBox 
-          title="Deaths" 
-          cases={countryInfo.todayDeaths} 
-          total={countryInfo.deaths}/>
+            title="Deaths" 
+            cases={countryInfo.todayDeaths} 
+            total={countryInfo.deaths}
+          />
         </div>
 
         
-       {/* Map */}
-       <Map />
+       <Map
+        center={mapCenter}
+        zoom={mapZoom}
+       />
       </div>
 
      <Card className="app__right">
@@ -105,7 +116,6 @@ function App() {
           <Table countries={tableData} /> 
           <h3>Worldwide new cases</h3>
           <LineGraph />
-          {/* Graphs */}
         </CardContent>
       </Card>
     
