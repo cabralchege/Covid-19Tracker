@@ -28,7 +28,9 @@
 - React- The javascript framework used for the whole of the project
 ## Technical Requirements
 - An internet browser on your computer or phone 
-
+- Connection to the internet
+## Project's Live Link
+- https://covid-19tracker-9e5e0.web.app/
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
