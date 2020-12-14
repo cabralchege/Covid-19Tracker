@@ -1,3 +1,34 @@
+# Project Name
+ - COVID-19 TRACKER
+ ## Author's Name
+ - CHEGE CABRAL
+
+ ## Description
+ - The website is a worldwide statistics tracker for the corona virus cases recoveries and deaths
+ 
+## Setup instructions 
+- Click on the pages live link
+- This takes you to the trackers website
+
+
+## Setup/ Installation Requirements
+- Connect your computer or phone to the internet
+- Click the websites link
+
+
+## Contact Info
+- Email: cabralowiro@gmail.com
+- Phone Number: 0733315530/ 0798124775
+## License
+- MIT License Copyright (c) 2020 (Chege Cabral)
+- - [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+## Technology Used
+- HTML- Was used to display contents of the page
+- CSS- Was used to style the page
+- React- The javascript framework used for the whole of the project
+## Technical Requirements
+- An internet browser on your computer or phone 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
